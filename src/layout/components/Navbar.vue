@@ -1,0 +1,30 @@
+<template>
+  <div class="navbar">
+    <Humburger
+      class="hamburger-container"
+      :is-active="opened"
+      @toggleClick="toggleSideBar"
+    />
+  </div>
+</template>
+
+<script setup>
+import Humburger from '@/components/Humburger/index.vue'
+import { useStore } from 'vuex'
+import { computed } from 'vue'
+
+const store = useStore()
+const opened = computed(() => store.state.app.sidebar.open)
+const toggleSideBar = () => {
+  store.dispatch('app/toggleSidebar')
+}
+</script>
+
+<style lang="scss" scoped>
+.navbar {
+  height: 50px;
+  @include fb();
+}
+.hamburger-container {
+}
+</style>

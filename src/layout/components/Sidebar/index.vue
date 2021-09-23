@@ -33,17 +33,18 @@
 import { reactive, computed, onMounted, ref } from 'vue'
 import SidebarItem from './SidebarItem.vue'
 import { constantRoutes } from '@/router'
+import { useStore } from 'vuex'
 
+const store = useStore()
 const routerList = reactive([])
-const isCollapse = false // 是否水平折叠
-const opened = ref(true)
+const opened = computed(() => store.state.app.sidebar.open)
+const isCollapse = computed(() => !opened.value) // 是否水平折叠
 onMounted(() => {
   constantRoutes.forEach((item) => {
     if (item.path === '/') {
       routerList.push(...item.children)
     }
   })
-  console.log(routerList)
 })
 </script>
 
