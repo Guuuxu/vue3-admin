@@ -5,11 +5,13 @@
       :is-active="opened"
       @toggleClick="toggleSideBar"
     />
+    <Breadcrumb class="breadcrumb-container" />
   </div>
 </template>
 
 <script setup>
 import Humburger from '@/components/Humburger/index.vue'
+import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 
@@ -23,8 +25,10 @@ const toggleSideBar = () => {
 <style lang="scss" scoped>
 .navbar {
   height: 50px;
-  @include fb();
-}
-.hamburger-container {
+  @include fb(flex-start);
+  .hamburger-container {
+    height: 50px;
+    @include fb();
+  }
 }
 </style>

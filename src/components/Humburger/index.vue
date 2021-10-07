@@ -21,8 +21,8 @@ import { defineProps, defineEmits } from 'vue'
 const props = defineProps({
   isActive: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 })
 
 const emits = defineEmits(['toggleClick'])

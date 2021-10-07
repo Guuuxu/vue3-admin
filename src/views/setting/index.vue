@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
     <router-view v-slot="{ Component }">
       <component :is="Component" />
     </router-view>
@@ -10,5 +9,5 @@
 <script setup>
 import { ref } from 'vue'
 
-const title = ref('设置')
+let title = ref('设置')
 </script>

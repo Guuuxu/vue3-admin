@@ -13,7 +13,7 @@
 <script>
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'AppMain'
+  name: 'AppMain',
 })
 </script>
 
@@ -22,7 +22,7 @@ export default defineComponent({
   position: relative;
 
   /* 84 = navbar + tags-view = 50 +34 */
-  height: calc(100vh - 84px);
+  height: calc(100vh - 50px);
   padding: 20px;
   overflow-x: hidden;
 }
